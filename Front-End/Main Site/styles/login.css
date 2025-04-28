@@ -1,0 +1,108 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+}
+
+.HeadTitle h1 {
+    color: black;
+    -webkit-text-stroke: 0.5px grey;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+nav.HeaderLinks {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1em;
+}
+
+nav.HeaderLinks div {
+    list-style: none;
+}
+
+nav.HeaderLinks a {
+    color : #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+nav.HeaderLinks a:hover {
+    color: red;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(58, 51, 122, 1) 0%, rgba(87, 126, 199, 1) 50%, rgba(216, 83, 237, 1) 100%);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.LoginSection {
+    background-image: url("../img/Bouton Marche.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.LoginSection h2 {
+    color: purple;
+}
+
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.LoginForm input {
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.LoginForm button {
+    padding: 0.8em;
+    background-color: #5a4ae3;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.LoginForm button:hover {
+    background-color: #7b65f1;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: transparent;
+}
+
+.Copyright {
+    color: black;
+    text-align: right;
+    text-transform: lowercase;
+}
