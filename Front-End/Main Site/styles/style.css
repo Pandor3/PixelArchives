@@ -38,5 +38,13 @@ footer {
     text-align: right;
 }
 
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: red
+}
+
 
 /*-- FIN DE LA PAGE TEST --*/
