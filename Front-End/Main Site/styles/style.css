@@ -7,8 +7,41 @@ html {
 }
 
 header {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
     border-bottom: 2px solid red;
+
+}
+
+.HeadTitle h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav.HeaderLinks {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1em;
+}
+
+nav.HeaderLinks div {
+    list-style: none;
+}
+
+nav.HeaderLinks a {
+    color : #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+nav.HeaderLinks a:hover {
+    color: red;
 }
 
 footer {
@@ -36,14 +69,6 @@ footer {
     color: black;
     text-transform: lowercase;
     text-align: right;
-}
-
-a {
-    color: #fff;
-}
-
-a:hover {
-    color: red
 }
 
 
