@@ -1,0 +1,42 @@
+/*-- PAGE DE TEST  --*/
+html {
+    background: #3a337a;
+    background: linear-gradient(90deg, rgba(58, 51, 122, 1) 0%, rgba(87, 126, 199, 1) 50%, rgba(216, 83, 237, 1) 100%);
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+header {
+    display: block;
+    border-bottom: 2px solid red;
+}
+
+footer {
+    display: block;
+    border-top: 2px solid red;
+}
+
+/* Placeholder picture for the home page */
+.HomePageImg {
+    padding-block: 25em 30em;
+    background-image: url('../img/City Background.png');
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position: center;
+}
+
+.HeadTitle {
+    color: black;
+    -webkit-text-stroke: .4px grey;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.Copyright {
+    color: black;
+    text-transform: lowercase;
+    text-align: right;
+}
+
+
+/*-- FIN DE LA PAGE TEST --*/
