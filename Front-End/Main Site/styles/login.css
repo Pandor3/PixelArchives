@@ -80,6 +80,34 @@ main {
     font-size: 1em;
 }
 
+.ErrorLogin {
+    color : red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.ErrorMsg {
+    display: none;
+}
+
+.HiddenPwd {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.HiddenPwd input {
+    flex: 1;
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    user-select: none;
+}
+
 .LoginForm button {
     padding: 0.8em;
     background-color: #5a4ae3;

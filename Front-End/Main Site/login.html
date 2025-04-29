@@ -31,9 +31,15 @@
     <main>
         <section class="LoginSection">
             <h2>Connexion</h2>
+            <div id="ErrorLogin" class="ErrorMsg">
+                Identifiant ou Mot de passe incorrect!
+            </div>
             <form auction="#" method="POST" class="LoginForm">
                 <input type="text" name="Username" placeholder="Identifiant ou Email" required>
-                <input type="password" name="Password" placeholder="Mot de passe" required>
+                    <div class="HiddenPwd">
+                        <input type="password" id="password" name="Password" placeholder="Mot de passe" required>
+                        <span id="togglePassword" class="toggle-eye">🔐</span>
+                    </div>
                 <button type="submit">Se Connecter</button>
             </form>
         </section>
@@ -44,5 +50,15 @@
             <h3>2025, All rights reserved</h3>
         </div>
     </footer>
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+            this.textContent = type === "password" ? "🔐" : "👁️‍🗨️";
+        });
+    </script>
 </body>
 </html>
