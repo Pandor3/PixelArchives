@@ -57,6 +57,12 @@ footer {
     background-position: center;
 }
 
+.HomePageImg p {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+}
+
 .HeadTitle {
     color: black;
     -webkit-text-stroke: .4px grey;
