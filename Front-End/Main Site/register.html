@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="./styles/register.css">
+        <title>Inscription</title>
+    </head>
+    <body>
+        <header>
+            <div class="HeadTitle">
+                <h1><a href="./index.html">PixelArchives</a></h1>
+            </div>
+            <nav class="HeaderLinks">
+                <div class="Accueil">
+                    <li><a href="./index.html">Accueil</a></li>
+                </div>
+                <div class="Login">
+                    <li><a href="./login.html">Connexion</a></li>
+                </div>
+                <div class="Register">
+                    <li><a href="./register.html">Créer un compte</a></li>
+                </div>
+                <div class="Test">
+                    <li><a href="https://www.youtube.com/watch?v=SbYXkOAoZpI">TEST</a></li>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="RegisterSection">
+                <h2>Créer un compte</h2>
+                <form action="#" method="POST" class="RegisterForm">
+                    <div class="UsrLabel"><label for="Username">Nom d'utilisateur</label></div>
+                    <input type="text" name="Username" required>
+                    <div class="EmailLabel"><label for="Email">Addresse Email</label></div>
+                    <input type="email" name="Email" required>
+                    <div class="PwdLabel"><label for="Password">Mot de passe</label></div>
+                        <div class="HiddenPwd">
+                            <input type="password" name="Password" id="password" required>
+                            <span id="togglePassword" class="toggle-eye">🔐</span>
+                        </div>
+                    <div class="ConfirmPwdLabel"><label for="ConfirmPassword">Confirmez le mot de passe</label></div>
+                    <div class="HiddenPwd">
+                        <input type="password"  id="confirmPassword" name="ConfirmPassword" required>
+                        <span id="toggleConfirmPassword" class="toggle-eye">🔐</span>
+                    </div>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div class="Copyright">
+                <h3>2025, All rights reserved</h3>
+            </div>
+        </footer>
+        <script>
+            const togglePassword = document.getElementById("togglePassword");
+            const passwordInput = document.getElementById("password");
+        
+            const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+            const confirmPasswordInput = document.getElementById("confirmPassword");
+        
+            togglePassword.addEventListener("click", function () {
+                const type = passwordInput.type === "password" ? "text" : "password";
+                passwordInput.type = type;
+                this.textContent = type === "password" ? "🔐" : "👁️‍🗨️";
+            });
+        
+            toggleConfirmPassword.addEventListener("click", function () {
+                const type = confirmPasswordInput.type === "password" ? "text" : "password";
+                confirmPasswordInput.type = type;
+                this.textContent = type === "password" ? "🔐" : "👁️‍🗨️";
+            });
+        </script>
+    </body>
+</html>

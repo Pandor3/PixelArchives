@@ -3,31 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
     <link rel="stylesheet" href="./styles/login.css">
+    <title>Connexion</title>
 </head>
-
-<body>
-    <header>
-        <div class="HeadTitle">
-            <h1>PixelArchives</h1>
-        </div>
-        <nav class="HeaderLinks">
-            <div class="Accueil">
-                <li><a href="./index.html">Accueil</a></li>
+    <body>
+        <header>
+            <div class="HeadTitle">
+                <h1><a href="./index.html">PixelArchives</a></h1>
             </div>
-            <div class="Login">
-                <li><a href="./login.html">Connexion</a></li>
-            </div>
-            <div class="Register">
-                <li><a href="./register.html">Créer un compte</a></li>
-            </div>
-            <div class="Test">
-                <li><a href="https://www.youtube.com/watch?v=SbYXkOAoZpI">TEST</a></li>
-            </div>
-        </nav>
-    </header>
-
+            <nav class="HeaderLinks">
+                <div class="Accueil">
+                    <li><a href="./index.html">Accueil</a></li>
+                </div>
+                <div class="Login">
+                    <li><a href="./login.html">Connexion</a></li>
+                </div>
+                <div class="Register">
+                    <li><a href="./register.html">Créer un compte</a></li>
+                </div>
+                <div class="Test">
+                    <li><a href="https://www.youtube.com/watch?v=SbYXkOAoZpI">TEST</a></li>
+                </div>
+            </nav>
+        </header>
     <main>
         <section class="LoginSection">
             <h2>Connexion</h2>
@@ -35,16 +33,17 @@
                 Identifiant ou Mot de passe incorrect!
             </div>
             <form action="#" method="POST" class="LoginForm">
-                <input type="text" name="Username" placeholder="Identifiant ou Email" required>
+                <div class="UsrLabel"><label for="Username">Identifiant ou Email</label></div>
+                <input type="text" name="Username" required>
+                    <div class="PwdLabel"><label for="Password">Mot de passe</label></div>
                     <div class="HiddenPwd">
-                        <input type="password" id="password" name="Password" placeholder="Mot de passe" required>
+                        <input type="password" id="password" name="Password" required>
                         <span id="togglePassword" class="toggle-eye">🔐</span>
                     </div>
                 <button type="submit">Se Connecter</button>
             </form>
         </section>
     </main>
-
     <footer>
         <div class="Copyright">
             <h3>2025, All rights reserved</h3>

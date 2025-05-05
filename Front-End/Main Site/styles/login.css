@@ -11,6 +11,12 @@ header {
     text-align: center;
     font-size: 2.5em;
     margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.HeadTitle a {
+    color: inherit;
+    text-decoration: none;
 }
 
 nav.HeaderLinks {
@@ -34,6 +40,7 @@ nav.HeaderLinks a {
 
 nav.HeaderLinks a:hover {
     color: red;
+    transition: color 0.2s;
 }
 
 body {
@@ -52,32 +59,56 @@ main {
 }
 
 .LoginSection {
+    max-width: 500px;
     background-image: url("../img/Bouton Marche.png");
     background-size: 75%;
     background-position: center;
     background-repeat: no-repeat;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 2em;
-    border-radius: 10px;
+    margin: 2em auto;
+    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     text-align: center;
 }
 
 .LoginSection h2 {
+    text-align: center;
     color: purple;
+    margin-bottom: 2em;
 }
 
 .LoginForm {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1.3em;
+    text-align: center;
+}
+
+.LoginForm label {
+    color: rgb(0 0 0);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
+    padding: .3em;
+    box-shadow: 0 0 10px #5a4ae3;
+    border-radius: 7px;
+    background-color: rgb(255 255 255 / 0.5);
+    margin-bottom: 0;
+    margin-top: 1em;
 }
 
 .LoginForm input {
-    padding: 0.8em;
+    padding: 0.5em;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.LoginForm input:focus {
+    border-color: #573ec7;
+    outline: none;
+    background-color: rgb(216 191 216);
 }
 
 .ErrorLogin {
@@ -98,6 +129,7 @@ main {
 
 .HiddenPwd input {
     flex: 1;
+    padding-right: 2.5em;
 }
 
 .toggle-eye {
@@ -111,16 +143,17 @@ main {
 .LoginForm button {
     padding: 0.8em;
     background-color: #5a4ae3;
-    color: white;
+    color: #fff;
     font-weight: bold;
     border: none;
+    font-size: 1em;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.2s;
 }
 
 .LoginForm button:hover {
-    background-color: #7b65f1;
+    background-color: red;
 }
 
 footer {
