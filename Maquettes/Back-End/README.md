@@ -6,5 +6,6 @@ Pensé avant tout comme un outil communautaire, le site offrira également un es
 
 Cette idée vient de ma passion pour les jeux vidéos et je souhaite combiner cette passion avec les compétences que j’ai pu acquérir lors de ma formation afin de devenir développeur web et mobile. Ce projet représente pour moi une opportunité de mettre en oeuvre ces compétences dans un cadre qui me motive en plus de monter en compétences.
 
-Voici une esquisse de ce que sera le Back-end de la section Forum de mon projet:
+Voici une esquisse de ce que sera l'architecture relationnelle de la section Forum de mon projet:
+
 ![UML](./img/Diagramme%20UML%20PixelArchives.jpg)
