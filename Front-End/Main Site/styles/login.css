@@ -58,6 +58,7 @@ main {
     justify-content: center;
 }
 
+/* This is used to make the box in the center of page */
 .LoginSection {
     max-width: 500px;
     background-image: url("../img/Bouton Marche.png");
@@ -72,6 +73,7 @@ main {
     text-align: center;
 }
 
+/* This is used for the "Connexion" title */
 .LoginSection h2 {
     text-align: center;
     color: purple;
@@ -85,6 +87,7 @@ main {
     text-align: center;
 }
 
+/* This is used to make the blocks around the ID/Password labels */
 .LoginForm label {
     color: rgb(0 0 0);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -97,6 +100,7 @@ main {
     margin-top: 1em;
 }
 
+/* This is used to make the blocks for the ID/Password inputs */
 .LoginForm input {
     padding: 0.5em;
     border: 1px solid #ccc;
@@ -105,6 +109,7 @@ main {
     transition: border-color 0.3s;
 }
 
+/* Whenever someone clicks on the blocks, the background and border colors will change */
 .LoginForm input:focus {
     border-color: #573ec7;
     outline: none;

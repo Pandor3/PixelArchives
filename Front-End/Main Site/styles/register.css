@@ -57,6 +57,7 @@ ul.HeaderLinks a:hover {
     transition: color 0.2s;
 }
 
+/* This is used to make this block a registration section */
 .RegisterSection {
     background-color: rgba(255, 255, 255, 0.85);
     padding: 2em;

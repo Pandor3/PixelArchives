@@ -1,3 +1,4 @@
+/* This will be used for the whole HTML page */
 html {
     background: #3a337a;
     background: linear-gradient(90deg, rgba(58, 51, 122, 1) 0%, rgba(87, 126, 199, 1) 50%, rgba(216, 83, 237, 1) 100%);
@@ -5,6 +6,7 @@ html {
     overscroll-behavior: none;
 }
 
+/* This allows the links in the header to be aligned on the same line, making a rudimentary menu */
 header {
     display: flex;
     flex-direction: column;
@@ -14,6 +16,14 @@ header {
 
 }
 
+.HeadTitle {
+    color: black;
+    -webkit-text-stroke: .4px grey;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+/* This will center the PixelArchives title */
 .HeadTitle h1 {
     text-align: center;
     margin: 0;
@@ -21,11 +31,13 @@ header {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+/* This will inherit the color of the Headtitle class */
 .HeadTitle a {
     color: inherit;
     text-decoration: none;
 }
 
+/* This allows the links in the header to be evenly spaced */
 ul.HeaderLinks {
     display: flex;
     justify-content: space-evenly;
@@ -34,6 +46,7 @@ ul.HeaderLinks {
     margin-top: 1em;
 }
 
+/* This removes the dots in front of the listed links */
 ul.HeaderLinks li {
     list-style: none;
 }
@@ -64,18 +77,12 @@ footer {
     background-position: center;
 }
 
+/* This allows the text in the picture of the homepage to be centered aswell as being visible */
 .HomePageImg p {
     color: #fff;
     text-align: center;
     font-size: 2rem;
     font-weight: bold;
-}
-
-.HeadTitle {
-    color: black;
-    -webkit-text-stroke: .4px grey;
-    text-align: center;
-    text-transform: capitalize;
 }
 
 .Copyright {
