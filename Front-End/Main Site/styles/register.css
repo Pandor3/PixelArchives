@@ -34,9 +34,10 @@ header {
 }
 
 ul.HeaderLinks {
+    padding-left: 0;
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 120%;
     max-width: 600px;
     margin-top: 1em;
 }

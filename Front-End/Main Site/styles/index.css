@@ -13,7 +13,6 @@ header {
     align-items: center;
     padding: 1em 0;
     border-bottom: 2px solid red;
-
 }
 
 .HeadTitle {
@@ -39,9 +38,10 @@ header {
 
 /* This allows the links in the header to be evenly spaced */
 ul.HeaderLinks {
+    padding-left: 0;
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    width: 120%;
     max-width: 600px;
     margin-top: 1em;
 }
