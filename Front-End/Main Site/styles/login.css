@@ -1,0 +1,177 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 2px solid red;}
+
+.HeadTitle h1 {
+    font-family: 'Special Elite', cursive;
+    color: black;
+    -webkit-text-stroke: 0.5px grey;
+    text-align: center;
+    font-size: 2.5em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.HeadTitle a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul.HeaderLinks {
+    padding-left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 120%;
+    max-width: 800px;
+    margin-top: 1em;
+}
+
+ul.HeaderLinks li {
+    list-style: none;
+}
+
+ul.HeaderLinks a {
+    color : #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+ul.HeaderLinks a:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(58, 51, 122, 1) 0%, rgba(87, 126, 199, 1) 50%, rgba(216, 83, 237, 1) 100%);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* This is used to make the box in the center of page */
+.LoginSection {
+    max-width: 500px;
+    background-image: url("../img/Bouton Marche.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2em;
+    margin: 2em auto;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* This is used for the "Connexion" title */
+.LoginSection h2 {
+    text-align: center;
+    color: purple;
+    margin-bottom: 2em;
+}
+
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+    text-align: center;
+}
+
+/* This is used to make the blocks around the ID/Password labels */
+.LoginForm label {
+    color: rgb(0 0 0);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
+    padding: .3em;
+    box-shadow: 0 0 10px #5a4ae3;
+    border-radius: 7px;
+    background-color: rgb(255 255 255 / 0.5);
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+/* This is used to make the blocks for the ID/Password inputs */
+.LoginForm input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+/* Whenever someone clicks on the blocks, the background and border colors will change */
+.LoginForm input:focus {
+    border-color: #573ec7;
+    outline: none;
+    background-color: rgb(216 191 216);
+}
+
+.ErrorLogin {
+    color : red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.ErrorMsg {
+    display: none;
+}
+
+.HiddenPwd {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.HiddenPwd input {
+    flex: 1;
+    padding-right: 2.5em;
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    user-select: none;
+}
+
+.LoginForm button {
+    padding: 0.8em;
+    background-color: #5a4ae3;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.LoginForm button:hover {
+    background-color: red;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: transparent;
+    border-top: 2px solid red;
+}
+
+.Copyright {
+    color: black;
+    text-align: right;
+    text-transform: lowercase;
+}
