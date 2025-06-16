@@ -15,7 +15,7 @@ header {
 }
 
 .HeadTitle {
-    font-family: 'Special Elite', cursive;
+    font-family: 'Press Start 2P', cursive;
     color: black;
     -webkit-text-stroke: .4px grey;
     text-align: center;
@@ -37,8 +37,9 @@ header {
 ul.HeaderLinks {
     padding-left: 0;
     display: flex;
-    justify-content: space-evenly;
-    width: 120%;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
     max-width: 600px;
     margin-top: 1em;
 }

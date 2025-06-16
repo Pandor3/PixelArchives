@@ -24,7 +24,7 @@ def index():
     return " API PixelArchives connectée à MySQL"
 #======================================================================
 
-# ROUTE REGISTER pour enregistrer un nouvel utilisateur =======================================
+# ROUTE REGISTER pour enregistrer un nouvel utilisateur ===============
 @app.route('/register', methods=['POST'])
 def register():
 
@@ -58,29 +58,38 @@ def register():
         return jsonify({'error': str(err)}), 500
 #=================================================================================================
 
-# ROUTE LOGIN pour qu'utilisateur puisse s'identifier
+# ROUTE LOGIN pour que l'utilisateur puisse s'identifier
 @app.route('/login', methods=['POST'])
 def login():
+
+    # Lecture de la requête en JSON
     data = request.get_json()
 
     username = data.get('username')
     password = data.get('password')
-
+    
+    # Message d'erreur au cas où l'utilisateur ne remplis pas tout les champs
     if not username or not password:
         return jsonify({'error': 'Les champs doivent être remplis'}), 400
     
     try:
+
+        # Requête envoyée à la base de données MySQL pour tenter de trouver le mot de passe correspondant
         cursor.execute("""
                        SELECT password FROM users
                        WHERE username = %s
                        """, (username,))
         result = cursor.fetchone()
 
+        # Retour attendus
         if result and check_password_hash(result[0], password):
+            # Retour positif
             return jsonify({'message': 'Connexion effectuée'}), 200
         else:
+            # Retour négatif si les identifiants ne correspondent pas aux données attendues
             return jsonify({'error': 'Identifiants invalides'}), 401
         
+    # Message d'erreur en cas de problème serveur (500)    
     except mysql.connector.Error as err:
         return jsonify({'error': str(err)}), 500
 #==============================================================================================

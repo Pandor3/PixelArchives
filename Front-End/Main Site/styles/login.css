@@ -6,7 +6,7 @@ header {
     border-bottom: 2px solid red;}
 
 .HeadTitle h1 {
-    font-family: 'Special Elite', cursive;
+    font-family: 'Press Start 2P', cursive;
     color: black;
     -webkit-text-stroke: 0.5px grey;
     text-align: center;
@@ -23,8 +23,9 @@ header {
 ul.HeaderLinks {
     padding-left: 0;
     display: flex;
-    justify-content: space-evenly;
-    width: 120%;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
     max-width: 800px;
     margin-top: 1em;
 }
