@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
-from flask import Flask, request, jsonify
+import json
+from flask import Flask, request, jsonify, render_template
 import mysql.connector
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -18,10 +19,36 @@ db = mysql.connector.connect(
 
 cursor = db.cursor()
 
-# ROUTE DE TEST pour voir si l'API fonctionne =========================
+# ROUTES DE TEST pour voir si l'API fonctionne =========================
 @app.route('/')
 def index():
     return " API PixelArchives connectée à MySQL"
+
+# Route HTML de l'accueil visuel
+@app.route('/home')
+def home_page():
+    return render_template('index.html')
+
+# Page d'inscription HTML
+@app.route('/inscription')
+def register_page():
+    return render_template('register.html')
+
+# Page de login HTML
+@app.route('/connexion')
+def login_page():
+    return render_template('login.html')
+
+# Page du hub
+@app.route('/hub')
+def hub_page():
+    return render_template('hub.html')
+
+@app.route('/minidex')
+def minidex():
+    with open('static/data/games.json', 'r', encoding='utf-8') as f:
+        games = json.load(f)
+    return render_template('minidex.html', games=games)
 #======================================================================
 
 # ROUTE REGISTER pour enregistrer un nouvel utilisateur ===============

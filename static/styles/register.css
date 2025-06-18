@@ -40,6 +40,7 @@ ul.HeaderLinks {
     justify-content: center;
     gap: 2em;
     width: 100%;
+    text-wrap: nowrap;
     max-width: 600px;
     margin-top: 1em;
 }
