@@ -52,6 +52,7 @@ ul.HeaderLinks li {
 }
 
 ul.HeaderLinks a {
+    font-family: 'Press Start 2P', cursive;
     color : #fff;
     text-decoration: none;
     font-weight: bold;

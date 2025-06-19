@@ -6,7 +6,6 @@ header {
     border-bottom: 2px solid red;}
 
 .HeadTitle h1 {
-    font-family: 'Press Start 2P', cursive;
     color: black;
     -webkit-text-stroke: 0.5px grey;
     text-align: center;
@@ -36,6 +35,7 @@ ul.HeaderLinks li {
 }
 
 ul.HeaderLinks a {
+    font-family: 'Press Start 2P', cursive;
     color : #fff;
     text-decoration: none;
     font-weight: bold;
