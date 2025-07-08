@@ -3,9 +3,13 @@ import os
 import json
 from flask import Flask, request, jsonify, render_template
 import mysql.connector
+import uuid
+import jwt
+from datetime import datetime, timedelta, timezone
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 load_dotenv()
 
 # Connexion à la base de données MySQL
@@ -14,7 +18,7 @@ db = mysql.connector.connect(
     port=int(os.getenv("DB_PORT")),
     user=os.getenv("DB_USER"),
     password=os.getenv("DB_PASSWORD"),
-    database=os.getenv("DB_NAME")
+    database=os.getenv("DB_NAME"),
 )
 
 cursor = db.cursor()
@@ -39,19 +43,18 @@ def register_page():
 def login_page():
     return render_template('login.html')
 
-# Page du hub
+# Page du forum
 @app.route('/hub')
 def hub_page():
     return render_template('hub.html')
 
+# Page Minidex dynamique
 @app.route('/minidex')
 def minidex():
-    with open('static/data/games.json', 'r', encoding='utf-8') as f:
-        games = json.load(f)
-    return render_template('minidex.html', games=games)
+    return render_template('minidex.html')
 #======================================================================
 
-# ROUTE REGISTER pour enregistrer un nouvel utilisateur ===============
+# ROUTE /REGISTER pour enregistrer un nouvel utilisateur ===============
 @app.route('/register', methods=['POST'])
 def register():
 
@@ -70,11 +73,14 @@ def register():
         # Hachage du mot de passe pour plus de sécurité
         hashed_password = generate_password_hash(password)
 
+        # Génération d'un UUID dans la base de données
+        new_uuid = str(uuid.uuid4())
+
         # Requête SQL envoyée à la base de données (database) avec les données utilisateur
         cursor.execute("""
-                       INSERT INTO users(username, email, password)
-                       VALUES (%s, %s, %s)
-                       """, (username, email, hashed_password))
+                       INSERT INTO users(uuid, username, email, password)
+                       VALUES (%s, %s, %s, %s)
+                       """, (new_uuid, username, email, hashed_password))
         db.commit()
 
         # Retour attendu en cas de succès
@@ -85,7 +91,7 @@ def register():
         return jsonify({'error': str(err)}), 500
 #=================================================================================================
 
-# ROUTE LOGIN pour que l'utilisateur puisse s'identifier
+# ROUTE /LOGIN pour que l'utilisateur puisse s'identifier =========================================
 @app.route('/login', methods=['POST'])
 def login():
 
@@ -103,15 +109,22 @@ def login():
 
         # Requête envoyée à la base de données MySQL pour tenter de trouver le mot de passe correspondant
         cursor.execute("""
-                       SELECT password FROM users
+                       SELECT uuid, password FROM users
                        WHERE username = %s
                        """, (username,))
         result = cursor.fetchone()
 
         # Retour attendus
-        if result and check_password_hash(result[0], password):
-            # Retour positif
-            return jsonify({'message': 'Connexion effectuée'}), 200
+        if result and check_password_hash(result[1], password):
+            user_uuid = result[0]
+
+            # Création du JWT
+            token = jwt.encode({
+                'uuid': user_uuid,
+                'exp': datetime.now(timezone.utc) + timedelta(hours=2)
+            }, app.config['SECRET_KEY'], algorithm='HS256')
+            # Retour positif, un JWT est donné à l'utilisateur lors de sa connexion
+            return jsonify({'message': 'Connexion effectuée', 'token': token}), 200
         else:
             # Retour négatif si les identifiants ne correspondent pas aux données attendues
             return jsonify({'error': 'Identifiants invalides'}), 401
@@ -119,6 +132,27 @@ def login():
     # Message d'erreur en cas de problème serveur (500)    
     except mysql.connector.Error as err:
         return jsonify({'error': str(err)}), 500
+#==============================================================================================
+
+# ROUTE /API/GAMES pour la génération des jeux depuis la BDD =========================================
+@app.route('/api/games')
+def api_games():
+    try:
+        cursor.execute("SELECT id, title, console, year, genre, cover FROM games")
+        rows = cursor.fetchall()
+        games = [
+            {
+                'id': row[0],
+                'title': row[1],
+                'console': row[2],
+                'year': row[3],
+                'genre': row[4],
+                'cover': row[5]
+            } for row in rows
+        ]
+        return jsonify(games)
+    except mysql.connector.Error as err:
+        return jsonify({'error' :str(err)}), 500
 #==============================================================================================
 
 if __name__ == '__main__':

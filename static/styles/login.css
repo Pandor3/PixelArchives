@@ -5,12 +5,18 @@ header {
     padding: 1em 0;
     border-bottom: 2px solid red;}
 
-.HeadTitle h1 {
+.HeadTitle {
+    font-family: 'Press Start 2P', cursive;
     color: black;
-    -webkit-text-stroke: 0.5px grey;
+    -webkit-text-stroke: .4px grey;
     text-align: center;
-    font-size: 2.5em;
+    text-transform: capitalize;
+}
+
+.HeadTitle h1 {
+    text-align: center;
     margin: 0;
+    font-size: 2.5em;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
@@ -62,7 +68,7 @@ main {
     justify-content: center;
 }
 
-/* This is used to make the box in the center of page */
+/* Image de la page d'accueil */
 .LoginSection {
     max-width: 500px;
     background-image: url("../img/Bouton Marche.png");
@@ -77,7 +83,7 @@ main {
     text-align: center;
 }
 
-/* This is used for the "Connexion" title */
+/* Pour le titre "Connexion" */
 .LoginSection h2 {
     text-align: center;
     color: purple;
@@ -91,7 +97,7 @@ main {
     text-align: center;
 }
 
-/* This is used to make the blocks around the ID/Password labels */
+/* Création du bloc au centre de la page*/
 .LoginForm label {
     color: rgb(0 0 0);
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -104,7 +110,7 @@ main {
     margin-top: 1em;
 }
 
-/* This is used to make the blocks for the ID/Password inputs */
+/* Création des blocs de saisie pour les identifiants/mots de passe */
 .LoginForm input {
     padding: 0.5em;
     border: 1px solid #ccc;
@@ -113,22 +119,13 @@ main {
     transition: border-color 0.3s;
 }
 
-/* Whenever someone clicks on the blocks, the background and border colors will change */
+/* L'arrière plan du bouton changera dès lors qu'un utilisateur clique dessus */
 .LoginForm input:focus {
     border-color: #573ec7;
     outline: none;
     background-color: rgb(216 191 216);
 }
 
-.ErrorLogin {
-    color : red;
-    text-align: center;
-    font-weight: bold;
-}
-
-.ErrorMsg {
-    display: none;
-}
 
 .HiddenPwd {
     position: relative;

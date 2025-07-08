@@ -18,26 +18,23 @@
                     <li><a href="{{ url_for('login_page') }}">Connexion</a></li>
                     <li><a href="{{ url_for('register_page') }}">Créer un compte</a></li>
                     <li><a href="{{ url_for('minidex')}}">Minidex</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=SbYXkOAoZpI">TEST</a></li>
                 </ul>
             </nav>
         </header>
     <main>
         <section class="LoginSection">
             <h2>Connexion</h2>
-            <div id="ErrorLogin" class="ErrorMsg">
-                Identifiant ou Mot de passe incorrect!
-            </div>
-            <form action="#" method="POST" class="LoginForm">
-                <div class="UsrLabel"><label for="Username">Identifiant ou Email</label></div>
-                <input type="text" name="Username" required>
-                    <div class="PwdLabel"><label for="Password">Mot de passe</label></div>
-                    <div class="HiddenPwd">
-                        <input type="password" id="password" name="Password" required>
-                        <span id="togglePassword" class="toggle-eye">🔐</span>
-                    </div>
+            <form id="loginForm" class="LoginForm">
+                <div class="UsrLabel"><label for="username">Identifiant ou Email</label></div>
+                <input type="text" id="username" name="Username" required>
+                
+                <div class="PwdLabel"><label for="Password">Mot de Passe</label></div>
+                <div class="HiddenPwd">
+                    <input type="password" id="password" name="Password" required>
+                    <span id="togglePassword" class="toggle-eye">🔐</span>
+                </div>
+
                 <button type="submit">Se Connecter</button>
-            </form>
         </section>
     </main>
     <footer>
@@ -55,5 +52,6 @@
             this.textContent = type === "password" ? "🔐" : "👁️‍🗨️";
         });
     </script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 </html>

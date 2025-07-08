@@ -1,6 +1,6 @@
 console.log('Fichier JS Chargé');
 
-fetch("/static/data/games.json")
+fetch("/api/games")
     .then(response => response.json())
     .then(data => {
         console.log(data);
@@ -8,31 +8,32 @@ fetch("/static/data/games.json")
         /* Ceci permet de trier les jeux du plus ancien au plus récent */
         data.sort((nouveau, ancien) => nouveau.year - ancien.year);
 
-        /* Ceci permet de classer les consoles dans un tableau en lisant les cartes de jeu */
-        let uniqueConsoles = [];
-        data.forEach(game => {
-            game.console.forEach(consoleName => {
-                if (!uniqueConsoles.includes(consoleName)) {
-                    uniqueConsoles.push(consoleName);
-                }
-            });
+       let uniqueConsoles = [];
+       let uniqueGenres = [];
+
+       data.forEach(game => {
+        if (typeof game.console === "string") {
+            game.console = game.console.split(',').map(s => s.trim());
+        }
+        if (typeof game.genre === "string") {
+            game.genre = game.genre.split(',').map(s => s.trim());
+        }
+
+        game.console.forEach(consoleName => {
+            if (!uniqueConsoles.includes(consoleName)) {
+                uniqueConsoles.push(consoleName);
+            }
         });
 
-        /* Ceci permet de filtrer les...Filtres des consoles générés dynamiquement */
-        uniqueConsoles.sort()
-
-        /* Ceci permet de classer les genres dans un tableau en lisant les cartes de jeu */
-        let uniqueGenres = [];
-        data.forEach(game => {
-            game.genre.forEach(genreName => {
-                if (!uniqueGenres.includes(genreName)) {
-                    uniqueGenres.push(genreName);
-                }
-            });
+        game.genre.forEach(genreName => {
+            if(!uniqueGenres.includes(genreName)) {
+                uniqueGenres.push(genreName);
+            }
         });
+       });
 
-        /* Ceci permet de filtrer les filtres des genres générés dynamiquement */
-        uniqueGenres.sort();
+       uniqueConsoles.sort();
+       uniqueGenres.sort();
 
         /* Ceci permet de mettre les consoles dans le système de filtrage */
         const selectElement = document.getElementById('consoles-select');
@@ -61,8 +62,11 @@ fetch("/static/data/games.json")
                 card.classList.add('game-card');
 
                 const img = document.createElement("img");
-                img.src = game.cover || "./assets/img/placeholder.jpg";
+                img.src = `/static/img/${game.cover}`;
                 img.alt = `Jaquette de ${game.title}`;
+                img.onerror = () => {
+                    img.src = "/static/img/placeholder.png";
+                };
                 card.appendChild(img);
 
 

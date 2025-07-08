@@ -12,11 +12,16 @@
         <div class="HeadTitle">
             <h1><a href="{{ url_for('hub_page') }}">Forum PixelArchives</a></h1>
         </div>
-        <ul class="HeaderLinks">
-            <li><a href="{{ url_for('home_page') }}">Site Principal</a></li>
-            <li><a href="{{ url_for('login_page') }}">Connexion</a></li>
-            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">TEST</a></li>
-        </ul>
+        <nav>
+            <ul class="HeaderLinks">
+                <li><a href="{{ url_for('home_page') }}">Accueil</a></li>
+                <li id="btn-login"><a href="{{ url_for('login_page') }}">Connexion</a></li>
+                <li id="btn-forum" style="display:none;"><a href="{{ url_for('hub_page') }}">Forum</a></li>
+                <li id="btn-register"><a href="{{ url_for('register_page') }}">Créer un compte</a></li>
+                <li><a href="{{ url_for('minidex')}}">Minidex</a></li>
+                <li id="btn-logout" style="display:none;"><a href="#" onclick="logout()">Déconnexion</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
         <div class="WelcomeMessage">
@@ -69,5 +74,6 @@
         <footer>
             <p>2025, all rights reserved</p>
         </footer>
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
 </body>
 </html>

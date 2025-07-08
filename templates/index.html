@@ -15,10 +15,11 @@
             <nav>
                 <ul class="HeaderLinks">
                     <li><a href="{{ url_for('home_page') }}">Accueil</a></li>
-                    <li><a href="{{ url_for('login_page') }}">Connexion</a></li>
-                    <li><a href="{{ url_for('register_page') }}">Créer un compte</a></li>
+                    <li id="btn-login"><a href="{{ url_for('login_page') }}">Connexion</a></li>
+                    <li id="btn-forum" style="display:none;"><a href="{{ url_for('hub_page') }}">Forum</a></li>
+                    <li id="btn-register"><a href="{{ url_for('register_page') }}">Créer un compte</a></li>
                     <li><a href="{{ url_for('minidex')}}">Minidex</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=SbYXkOAoZpI">TEST</a></li>
+                    <li id="btn-logout" style="display:none;"><a href="#" onclick="logout()">Déconnexion</a></li>
                 </ul>
             </nav>
         </header>
@@ -30,5 +31,6 @@
                     <h3>2025, All rights reserved.</h3>
                 </div>
             </footer>
+            <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
     </body>
 </html>

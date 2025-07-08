@@ -56,6 +56,14 @@ ul.HeaderLinks a:hover {
     gap: 1.5em;
 }
 
+#game-gallery:has(.game-card:only-child) {
+    justify-content: center;
+}
+
+#game-gallery:has(.game-card:only-child) .game-card {
+    width: 250px !important;
+}
+
 .game-card {
     background-color: #f5e9d3;
     border: 2px solid #3a337a;
