@@ -1,0 +1,249 @@
+/* Importation de la police d'écriture rétro et ajout d'un fond noir */
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: linear-gradient(90deg, #3a337a 0%, #577ec7 50%, #d853ed 100%);
+  color: #f5e9d3;
+  margin: 0;
+  padding: 1em 1.5em;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 2px solid red;
+}
+
+header h1 {
+    color: #ff914d;
+    font-size: 2rem;
+    text-shadow: 2px 2px #3a337a;
+}
+
+ul.HeaderLinks {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    text-wrap: nowrap;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 1em;
+}
+
+ul.HeaderLinks li {
+    list-style: none;
+}
+
+ul.HeaderLinks a {
+    color : #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+ul.HeaderLinks a:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+/* Il s'agit de la galerie de jeux */
+#game-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+#game-gallery:has(.game-card:only-child) {
+    justify-content: center;
+}
+
+#game-gallery:has(.game-card:only-child) .game-card {
+    width: 250px !important;
+}
+
+.game-card {
+    background-color: #f5e9d3;
+    border: 2px solid #3a337a;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3), 0 0 8px #d853ed;
+    padding: 1em;
+    max-width: 280px;
+    width: 100%;
+    text-align: center;
+    color: #1a1a1a;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card h2 {
+    font-size: 1.3em;
+    color: transparent;
+    -webkit-text-stroke: .3px #1a1a1a;
+    margin-top: 0.5em;
+    background: linear-gradient(to right, #ff914d 0%, #ff914d 100%);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: background-size 0.2s ease-in-out;
+}
+
+.game-card p {
+    font-size: 0.75rem;
+    margin: 0.3em 0;
+}
+
+.game-card img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.4), 0 0 12px #ff914d;
+    border-radius: 10px;
+}
+
+.game-card:hover h2 {
+    background-size: 100% 100%;
+}
+
+#filters select {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #1a1a1a;
+  color: #f5e9d3;
+  border: 2px solid #ff914d;
+  padding: 0.5em;
+  font-size: 0.7rem;
+  border-radius: 6px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.collection-btn {
+    margin-top: 10px;
+    padding: 0.6rem 1rem;
+    background-color: #800080;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.collection-btn:hover {
+    background-color: #5a005a;
+}
+
+/* ============== MEDIA QUERIES ============== */
+@media screen and (max-width: 443px) {
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        width: 100%;
+        padding: 0;
+        margin: 1em 0;
+    }
+
+    ul.HeaderLinks li {
+        width: 100%;
+        text-align: center;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.1em;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 444px) and (max-width: 600px) {
+    header h1 {
+        font-size: 1.6em;
+        text-align: center;
+        word-break: break-word;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        width: 100%;
+        padding: 0;
+        margin: 1em 0;
+    }
+
+    ul.HeaderLinks li {
+        width: 100%;
+        text-align: center;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.1em;
+        display: inline-block;
+        width: 100%;
+    }
+
+    #game-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-card {
+        width: 90%;
+        font-size: 0.8rem;
+    }
+
+    .game-card img {
+        max-width : 100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        padding-inline: 1em;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.3em;
+    }
+
+    .game-card {
+        width: 45%;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    ul.HeaderLinks {
+        justify-content: center;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.5em;
+    }
+
+    .game-card {
+        width: 28%;
+    }
+}

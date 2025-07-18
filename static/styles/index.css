@@ -1,0 +1,255 @@
+/* Ceci sera utilisé pour tout la page HTML */
+html {
+    background: #3a337a;
+    background: linear-gradient(90deg, rgba(58, 51, 122, 1) 0%, rgba(87, 126, 199, 1) 50%, rgba(216, 83, 237, 1) 100%);
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+/* Ceci permet aux liens d'être alignés afin de faire un menu compréhensible */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 2px solid red;
+}
+
+.HeadTitle {
+    font-family: 'Press Start 2P', cursive;
+    color: black;
+    -webkit-text-stroke: .4px grey;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+/* Ceci va centrer le titre PixelArchive */
+.HeadTitle h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Ceci va inhériter la couleur de .HeadTitle */
+.HeadTitle a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Ceci permet aux liens dans le Header d'être bien espacés les uns des autres */
+ul.HeaderLinks {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+    text-wrap: nowrap;
+    max-width: 600px;
+    margin-top: 1em;
+}
+
+/* TCeci enlève les points devant les listes de liens */
+ul.HeaderLinks li {
+    list-style: none;
+}
+
+ul.HeaderLinks a {
+    font-family: 'Press Start 2P', cursive;
+    color : #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+ul.HeaderLinks a:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+footer {
+    display: block;
+    border-top: 2px solid red;
+}
+
+/* Image Placeholder pour la page de présentation */
+.HomePageImg {
+    padding-block: 25em 30em;
+    background-image: url('../img/City\ Background.png');
+    background-repeat: no-repeat;
+    background-size: 95%;
+    background-position: center;
+}
+
+/* Ceci permet au texte sur l'image de la page de présentation d'être bien centré et visible */
+.HomePageImg p {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.Copyright {
+    font-family: 'Merriweather', serif;
+    color: black;
+    text-transform: lowercase;
+    text-align: right;
+}
+
+
+/*==== MEDIA QUERIES ====*/
+
+/* Pour les petits téléphones */
+@media screen and (max-width: 480px) {
+    .HeadTitle h1 {
+        font-size: 1.6em;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.1em;
+        margin: 0.2em 0;
+    }
+
+    .HomePageImg {
+        padding-block: 10em 15em;
+        background-size: cover;
+    }
+
+    .HomePageImg p {
+        font-size: 1.2em;
+        padding: 0 1em;
+    }
+
+    .Copyright {
+        font-size: 0.8em;
+        text-align: center;
+    }
+}
+
+/* Pour les téléphones de tailles standard */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .HeadTitle h1 {
+        font-size: 1.8em;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.3em;
+        margin: .3em 0;
+    }
+
+    .HomePageImg {
+        padding-block: 12em 18em;
+        background-size: cover;
+    }
+
+    .HomePageImg p {
+        font-size: 1.4em;
+        padding: 0 2em;
+    }
+
+    .Copyright {
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Pour les tablettes et les PC portables */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .HeadTitle h1 {
+        font-size: 2.2em;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 110%;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.4em;
+    }
+
+    .HomePageImg {
+        padding-block: 20em 25em;
+        background-size: 90%;
+    }
+
+    .HomePageImg p {
+        font-size: 1.6em;
+    }
+
+    .Copyright{
+        font-size: 1em;
+    }
+}
+
+/* Pour un PC de bureau standard */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .HeadTitle h1 {
+        font-size: 2.5em;
+    }
+
+    ul.HeaderLinks {
+        width: 115%;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.5em;
+    }
+
+    .HomePageImg {
+        padding-block: 20em 25em;
+        background-size: 95%;
+    }
+
+    .HomePageImg p {
+        font-size: 2em;
+    }
+
+    .Copyright {
+        font-size: 1.1em;
+    }
+}
+
+/* Pour les grandes résolutions d'ordinateurs */
+@media screen and (min-width: 1441px) {
+    .HeadTitle h1 {
+        font-size: 3em;
+    }
+
+    ul.HeaderLinks {
+        width: 120%;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.7em;
+    }
+
+    .HomePageImg {
+        padding-block: 30em 35em;
+        background-size: 100%;
+    }
+
+    .HomePageImg p {
+        font-size: 2.2em;
+    }
+
+    .Copyright {
+        font-size: 1.2em;
+    }
+}
+
+/*========================/

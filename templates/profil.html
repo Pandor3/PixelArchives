@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/profil.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>PixelArchives - Mon Profil</title>
+</head>
+<body>
+    <header>
+        <div class="HeadTitle">
+            <h1><a href="{{ url_for('home_page') }}">PixelArchives</a></h1>
+        </div>
+        <nav>
+            <ul class="HeaderLinks">
+                <li><a href="{{ url_for('home_page') }}">Accueil</a></li>
+                <li id="btn-login"><a href="{{ url_for('login_page') }}">Connexion</a></li>
+                <li id="btn-forum" style="display:none;"><a href="{{ url_for('hub_page') }}">Forum</a></li>
+                <li id="btn-register"><a href="{{ url_for('register_page') }}">Créer un compte</a></li>
+                <li><a href="{{ url_for('minidex')}}">Minidex</a></li>
+                <li id="btn-logout" style="display:none;"><a href="#" onclick="logout()">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="ProfilMain">
+        <h2 class="ProfilTitle">Bienvenue, <span id="username"></span> !</h2>
+
+        <section class="ProfilBox">
+            <p><strong>Email :</strong> <span id="email"></span></p>
+            <p><strong>Date d'inscription :</strong> <span id="created_at"></span></p>
+        </section>
+        <section>
+            <h3>Ma Collection de Jeux</h3>
+            <div id="user-collection" class="collection-grid"></div>
+        </section>
+        <section class="DangerZone">
+            <button id="delete-btn">Supprimer mon profil</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="Copyright">
+            <h3>2025, All rights reserved.</h3>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/profil.js') }}"></script>
+</body>
+</html>

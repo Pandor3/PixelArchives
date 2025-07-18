@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/register.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <title>PixelArchives - Inscription</title>
+    </head>
+    <script>
+  const token = localStorage.getItem("jwt");
+  if (token) {
+    window.location.href = "/home";
+  }
+</script>
+    <body>
+        <header>
+            <div class="HeadTitle">
+                <h1><a href="{{ url_for('home_page') }}">PixelArchives</a></h1>
+            </div>
+            <nav>
+                <ul class="HeaderLinks">
+                    <li><a href="{{ url_for('home_page') }}">Accueil</a></li>
+                    <li><a href="{{ url_for('login_page') }}">Connexion</a></li>
+                    <li><a href="{{ url_for('register_page') }}">Créer un compte</a></li>
+                    <li><a href="{{ url_for('minidex')}}">Minidex</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="RegisterSection">
+                <h2>Créer un compte</h2>
+                <form action="#" method="POST" class="RegisterForm">
+                    <div class="UsrLabel"><label for="Username">Nom d'utilisateur</label></div>
+                    <input type="text" name="Username" required>
+                    <div class="EmailLabel"><label for="Email">Addresse Email</label></div>
+                    <input type="email" name="Email" required>
+                    <div class="PwdLabel"><label for="Password">Mot de passe</label></div>
+                        <div class="HiddenPwd">
+                            <input type="password" name="Password" id="password" required>
+                            <span id="togglePassword" class="toggle-eye">🔐</span>
+                        </div>
+                    <div class="ConfirmPwdLabel"><label for="ConfirmPassword">Confirmez le mot de passe</label></div>
+                    <div class="HiddenPwd">
+                        <input type="password"  id="confirmPassword" name="ConfirmPassword" required>
+                        <span id="toggleConfirmPassword" class="toggle-eye">🔐</span>
+                    </div>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div class="Copyright">
+                <h3>2025, All rights reserved</h3>
+            </div>
+        </footer>
+        <script>
+            const togglePassword = document.getElementById("togglePassword");
+            const passwordInput = document.getElementById("password");
+        
+            const toggleConfirmPassword = document.getElementById("toggleConfirmPassword");
+            const confirmPasswordInput = document.getElementById("confirmPassword");
+        
+            togglePassword.addEventListener("click", function () {
+                const type = passwordInput.type === "password" ? "text" : "password";
+                passwordInput.type = type;
+                this.textContent = type === "password" ? "🔐" : "👁️‍🗨️";
+            });
+        
+            toggleConfirmPassword.addEventListener("click", function () {
+                const type = confirmPasswordInput.type === "password" ? "text" : "password";
+                confirmPasswordInput.type = type;
+                this.textContent = type === "password" ? "🔐" : "👁️‍🗨️";
+            });
+        </script>
+        <script src="{{ url_for('static', filename='js/register.js') }}"></script>
+    </body>
+</html>

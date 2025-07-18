@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/login.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>PixelArchives - Connexion</title>
+</head>
+<script>
+  const token = localStorage.getItem("jwt");
+  if (token) {
+    window.location.href = "/home";
+  }
+</script>
+    <body>
+        <header>
+            <div class="HeadTitle">
+                <h1><a href="{{ url_for('home_page') }}">PixelArchives</a></h1>
+            </div>
+            <nav>
+                <ul class="HeaderLinks">
+                    <li><a href="{{ url_for('home_page') }}">Accueil</a></li>
+                    <li><a href="{{ url_for('login_page') }}">Connexion</a></li>
+                    <li><a href="{{ url_for('register_page') }}">Créer un compte</a></li>
+                    <li><a href="{{ url_for('minidex')}}">Minidex</a></li>
+                </ul>
+            </nav>
+        </header>
+    <main>
+        <section class="LoginSection">
+            <h2>Connexion</h2>
+            <form id="loginForm" class="LoginForm">
+                <div class="UsrLabel"><label for="username">Identifiant ou Email</label></div>
+                <input type="text" id="username" name="Username" required>
+                
+                <div class="PwdLabel"><label for="Password">Mot de Passe</label></div>
+                <div class="HiddenPwd">
+                    <input type="password" id="password" name="Password" required>
+                    <span id="togglePassword" class="toggle-eye">🔐</span>
+                </div>
+
+                <button type="submit">Se Connecter</button>
+        </section>
+    </main>
+    <footer>
+        <div class="Copyright">
+            <h3>2025, All rights reserved</h3>
+        </div>
+    </footer>
+    <script>
+        const togglePassword = document.getElementById("togglePassword");
+        const passwordInput = document.getElementById("password");
+
+        togglePassword.addEventListener("click", function () {
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+            this.textContent = type === "password" ? "🔐" : "👁️‍🗨️";
+        });
+    </script>
+    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>

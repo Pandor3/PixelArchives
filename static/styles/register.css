@@ -1,0 +1,305 @@
+html {
+    background: #3a337a;
+    background: linear-gradient(90deg, rgba(58, 51, 122, 1) 0%, rgba(87, 126, 199, 1) 50%, rgba(216, 83, 237, 1) 100%);
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 2px solid red;
+
+}
+
+.HeadTitle {
+    font-family: 'Press Start 2P', cursive;
+    color: black;
+    -webkit-text-stroke: .4px grey;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.HeadTitle h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.HeadTitle a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul.HeaderLinks {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+    text-wrap: nowrap;
+    max-width: 600px;
+    margin-top: 1em;
+}
+
+ul.HeaderLinks li {
+    list-style: none;
+}
+
+ul.HeaderLinks a {
+    font-family: 'Press Start 2P', cursive;
+    color : #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+ul.HeaderLinks a:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+/* This is used to make this block a registration section */
+.RegisterSection {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.RegisterSection h2 {
+    text-align: center;
+    margin-bottom: 1.5em;
+    color: purple;
+}
+
+.RegisterForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+    text-align: center;
+}
+
+.RegisterForm label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    padding: .3em;
+    box-shadow: 0 0 10px #5a4ae3;
+    border-radius: 7px;
+    background-color: rgb(255 255 255 / 0.5);
+}
+
+.RegisterForm input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.RegisterForm input:focus {
+    border-color: #573ec7;
+    outline: none;
+    background-color: rgb(216 191 216 / 0.5);
+}
+
+.RegisterForm button {
+    padding: 0.8em;
+    background-color: #5a4ae3;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 2em;
+}
+
+.RegisterForm button:hover {
+    background-color: red;
+}
+
+.HiddenPwd {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.HiddenPwd input {
+    flex: 1;
+    padding-right: 2.5em;
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    user-select: none;
+}
+
+footer {
+    display: block;
+    border-top: 2px solid red;
+}
+
+.Copyright {
+    color: black;
+    text-transform: lowercase;
+    text-align: right;
+}
+
+/* ===== MEDIA QUERIES – register.css ===== */
+
+/* Petits téléphones */
+@media screen and (max-width: 480px) {
+    .HeadTitle h1 {
+        font-size: 1.6em;
+        word-break: break-word;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        width: 100%;
+        padding: 0;
+        margin: 1em 0;
+    }
+
+    ul.HeaderLinks li {
+        width: 100%;
+        text-align: center;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.1em;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .RegisterSection {
+        width: 80%;
+        padding: 1.5em;
+    }
+
+    .RegisterForm input {
+        font-size: 0.95em;
+    }
+
+    .RegisterForm button {
+        font-size: 1em;
+    }
+
+    .Copyright {
+        text-align: center;
+        font-size: 0.8em;
+    }
+}
+
+/* Smartphones standards */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .HeadTitle h1 {
+        font-size: 1.8em;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.3em;
+    }
+
+    .RegisterSection {
+        max-width: 500px;
+    }
+
+    .Copyright {
+        text-align: center;
+        font-size: 0.9em;
+    }
+}
+
+/* Tablettes / petits laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .HeadTitle h1 {
+        font-size: 2.2em;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        padding-inline: 1em;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.4em;
+    }
+
+    .RegisterSection {
+        max-width: 500px;
+    }
+
+    .Copyright {
+        font-size: 1em;
+        text-align: right;
+    }
+}
+
+/* PC standards */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .HeadTitle h1 {
+        font-size: 2.5em;
+    }
+
+    ul.HeaderLinks {
+        justify-content: center;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.5em;
+    }
+
+    .RegisterSection {
+        max-width: 500px;
+    }
+
+    .Copyright {
+        font-size: 1.1em;
+    }
+}
+
+/* Très grands écrans */
+@media screen and (min-width: 1441px) {
+    .HeadTitle h1 {
+        font-size: 3em;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.7em;
+    }
+
+    .RegisterSection {
+        max-width: 600px;
+    }
+
+    .Copyright {
+        font-size: 1.2em;
+    }
+}
+
+/* ======================================== */

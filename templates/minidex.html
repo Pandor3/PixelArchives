@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MiniDex</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/minidex.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>MiniDex</h1>
+                <nav>
+                    <ul class="HeaderLinks">
+                        <li><a href="{{ url_for('home_page') }}">Accueil</a></li>
+                        <li id="btn-login"><a href="{{ url_for('login_page') }}">Connexion</a></li>
+                        <li id="btn-forum" style="display:none;"><a href="{{ url_for('hub_page') }}">Forum</a></li>
+                        <li id="btn-register"><a href="{{ url_for('register_page') }}">Créer un compte</a></li>
+                        <li><a href="{{ url_for('minidex')}}">Minidex</a></li>
+                        <li id="btn-profil"><a href="{{ url_for('profil') }}">Profil</a></li>
+                        <li id="btn-logout" style="display:none;"><a href="#" onclick="logout()">Déconnexion</a></li>
+                    </ul>
+                </nav>
+            <section id="filters">
+                <label for="consoles-select">Filtrer par console :</label>
+                    <select id="consoles-select">
+                        <option value="all">Toutes</option>
+                    </select>
+                <label for="genres-select">Filtrer par genres :</label>
+                    <select id="genres-select">
+                        <option value="all">Tous</option>
+                    </select>
+            </section>
+        </header>
+
+        <main>
+            <section id="game-gallery">
+
+            </section>
+        </main>
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+    </body>
+</html>

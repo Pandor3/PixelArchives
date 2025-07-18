@@ -1,0 +1,323 @@
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
+    border-bottom: 2px solid red;}
+
+.HeadTitle {
+    font-family: 'Press Start 2P', cursive;
+    color: black;
+    -webkit-text-stroke: .4px grey;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.HeadTitle h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.HeadTitle a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul.HeaderLinks {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+    text-wrap: nowrap;
+    max-width: 800px;
+    margin-top: 1em;
+}
+
+ul.HeaderLinks li {
+    list-style: none;
+}
+
+ul.HeaderLinks a {
+    font-family: 'Press Start 2P', cursive;
+    color : #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+ul.HeaderLinks a:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+body {
+    background: linear-gradient(90deg, rgba(58, 51, 122, 1) 0%, rgba(87, 126, 199, 1) 50%, rgba(216, 83, 237, 1) 100%);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image de la page d'accueil */
+.LoginSection {
+    max-width: 500px;
+    background-image: url("../img/Bouton Marche.png");
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2em;
+    margin: 2em auto;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Pour le titre "Connexion" */
+.LoginSection h2 {
+    text-align: center;
+    color: purple;
+    margin-bottom: 2em;
+}
+
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3em;
+    text-align: center;
+}
+
+/* Création du bloc au centre de la page*/
+.LoginForm label {
+    color: rgb(0 0 0);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
+    padding: .3em;
+    box-shadow: 0 0 10px #5a4ae3;
+    border-radius: 7px;
+    background-color: rgb(255 255 255 / 0.5);
+    margin-bottom: 0;
+    margin-top: 1em;
+}
+
+/* Création des blocs de saisie pour les identifiants/mots de passe */
+.LoginForm input {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+/* L'arrière plan du bouton changera dès lors qu'un utilisateur clique dessus */
+.LoginForm input:focus {
+    border-color: #573ec7;
+    outline: none;
+    background-color: rgb(216 191 216);
+}
+
+
+.HiddenPwd {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.HiddenPwd input {
+    flex: 1;
+    padding-right: 2.5em;
+}
+
+.toggle-eye {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 1.2em;
+    user-select: none;
+}
+
+.LoginForm button {
+    padding: 0.8em;
+    background-color: #5a4ae3;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.LoginForm button:hover {
+    background-color: red;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: transparent;
+    border-top: 2px solid red;
+}
+
+.Copyright {
+    color: black;
+    text-align: right;
+    text-transform: lowercase;
+}
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Petits téléphones */
+@media screen and (max-width: 480px) {
+    .HeadTitle h1 {
+        font-size: 1.6em;
+        word-break: break-word;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        width: 100%;
+        padding: 0;
+    }
+
+    ul.HeaderLinks li {
+        text-align: center;
+        width: 100%;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.1em;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .LoginSection {
+        width: 70%;
+        background-size: 70%;
+        padding: 1.5em;
+    }
+
+    .LoginForm {
+        gap: 1em;
+    }
+
+    .LoginForm input {
+        font-size: 1em;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.8em;
+        padding: 1em 0;
+    }
+}
+
+/* Smartphones standards */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .HeadTitle h1 {
+        font-size: 1.8em;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.3em;
+    }
+
+    .LoginSection {
+        max-width: 70%;
+        background-size: 80%;
+    }
+
+    footer {
+        font-size: 0.9em;
+        text-align: center;
+    }
+}
+
+/* Tablettes / petits laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .HeadTitle h1 {
+        font-size: 2.2em;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.4em;
+    }
+
+    .LoginSection {
+        max-width: 80%;
+        background-size: 85%;
+    }
+
+    footer {
+        font-size: 1em;
+    }
+}
+
+/* PC standard */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .HeadTitle h1 {
+        font-size: 2.5em;
+    }
+
+    ul.HeaderLinks {
+        justify-content: center;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.5em;
+    }
+
+    .LoginSection {
+        max-width: 500px;
+        background-size: 75%;
+    }
+
+    footer {
+        font-size: 1.1em;
+    }
+}
+
+/* Très grands écrans */
+@media screen and (min-width: 1441px) {
+    .HeadTitle h1 {
+        font-size: 3em;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.7em;
+    }
+
+    .LoginSection {
+        max-width: 600px;
+        background-size: 70%;
+    }
+
+    footer {
+        font-size: 1.2em;
+    }
+}
+ /* ==================================== */

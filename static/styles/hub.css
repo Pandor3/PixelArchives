@@ -1,0 +1,260 @@
+html {
+    background: linear-gradient(90deg, rgba(58, 51, 122, 1) 0%, rgba(87, 126, 199, 1) 50%, rgba(216, 83, 237, 1) 100%);
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1em 0;
+    border-bottom: 2px solid red;
+}
+
+.HeadTitle {
+    font-family: 'Press Start 2P', cursive;
+    color: black;
+    -webkit-text-stroke: .4px grey;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.HeadTitle h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.HeadTitle a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.WelcomeMessage h2 {
+    text-align: center;
+}
+
+ul.HeaderLinks {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+    text-wrap: nowrap;
+    max-width: 600px;
+    margin-top: 1em;
+}
+
+ul.HeaderLinks li {
+    list-style: none;
+}
+
+ul.HeaderLinks a {
+    font-family: 'Press Start 2P', cursive;
+    color : #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+ul.HeaderLinks a:hover {
+    color: red;
+    transition: color 0.2s;
+}
+
+.CategoriesForum {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.CategoriesForum th, .CategoriesForum td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.CategoriesForum th {
+    background-color: #222;
+    color: white;
+}
+
+.Categorie td {
+    background-color: #ddd;
+    font-weight: bold;
+}
+
+.SousForum td a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.SousForum td a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    border-top: 2px solid red;
+    text-align: right;
+    font-weight: bold;
+}
+
+
+/*==== MEDIA QUERIES ====*/
+
+/* Petits téléphones */
+@media screen and (max-width: 481px) {
+    .HeadTitle h1 {
+        font-size: 1.6em;
+        word-break: break-word;
+        text-align: center;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+        padding: 0;
+        margin: 1em 0;
+        width: 100%;
+    }
+
+    ul.HeaderLinks li {
+        width: 100%;
+        text-align: center;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.1em;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .CategoriesForum {
+        overflow-x: auto;
+        display: block;
+        width: 100%;
+        font-size: 0.95em;
+    }
+
+    .CategoriesForum th,
+    .CategoriesForum td {
+        white-space: nowrap;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.8em;
+        font-weight: bold;
+        padding: 1em 0;
+    }
+}
+
+/* Smartphones standards */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .HeadTitle h1 {
+        font-size: 1.8em;
+    }
+
+    ul.HeaderLinks {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.3em;
+    }
+
+    .CategoriesForum {
+        font-size: 1em;
+        width: 95%;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+}
+
+/* Tablettes / petits laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .HeadTitle h1 {
+        font-size: 2.2em;
+    }
+
+    ul.HeaderLinks {
+       flex-wrap: wrap;
+        justify-content: center;
+        gap: 1em;
+        max-width: 100%;
+        padding-inline: 1em;
+        text-align: center;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.4em;
+    }
+
+    .CategoriesForum {
+        font-size: 1.05em;
+    }
+
+    footer {
+        font-size: 1em;
+        font-weight: bold;
+    }
+}
+
+/* PC standard */
+@media screen and (min-width: 1025px) and (max-width: 1440px) {
+    .HeadTitle h1 {
+        font-size: 2.5em;
+    }
+
+    ul.HeaderLinks {
+        justify-content: center;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.5em;
+    }
+
+    .CategoriesForum {
+        font-size: 1.1em;
+    }
+
+    footer {
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+}
+
+/* Très grands écrans */
+@media screen and (min-width: 1441px) {
+    .HeadTitle h1 {
+        font-size: 3em;
+    }
+
+    ul.HeaderLinks a {
+        font-size: 1.7em;
+    }
+
+    .CategoriesForum {
+        font-size: 1.2em;
+    }
+
+    footer {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+}
+
+/*=======================*/

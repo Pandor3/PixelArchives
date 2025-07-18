@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/hub.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>PixelArchives - Forum</title>
+</head>
+<body>
+    <header>
+        <div class="HeadTitle">
+            <h1><a href="{{ url_for('hub_page') }}">Forum PixelArchives</a></h1>
+        </div>
+        <nav>
+            <ul class="HeaderLinks">
+                <li><a href="{{ url_for('home_page') }}">Accueil</a></li>
+                <li id="btn-login"><a href="{{ url_for('login_page') }}">Connexion</a></li>
+                <li id="btn-forum" style="display:none;"><a href="{{ url_for('hub_page') }}">Forum</a></li>
+                <li id="btn-register"><a href="{{ url_for('register_page') }}">Créer un compte</a></li>
+                <li><a href="{{ url_for('minidex')}}">Minidex</a></li>
+                <li id="btn-profil"><a href="{{ url_for('profil') }}">Profil</a></li>
+                <li id="btn-logout" style="display:none;"><a href="#" onclick="logout()">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="WelcomeMessage">
+            <h2>Bienvenue sur le Forum de PixelArchives</h2>
+        </div>
+        <table class="CategoriesForum">
+            <thead>
+                <tr>
+                    <th>Catégorie / Sous-Forum</th>
+                    <th>Sujets</th>
+                    <th>Messages</th>
+                    <th>Dernier message</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="Categorie">
+                    <td colspan="4"><strong>Consoles</strong></td>
+                </tr>
+                <tr class="SousForum">
+                    <td><a href="subforum.html?id=1">PC</a></td>
+                    <td>120</td>
+                    <td>1337</td>
+                    <td>Monoco - 12 Avril 2025</td>
+                </tr>
+                <tr class="SousForum">
+                    <td><a href="subforum.html?id=2">Nintendo Switch</a></td>
+                    <td>150</td>
+                    <td>1030</td>
+                    <td>Geist - 10 Mai 2025</td>
+                </tr>
+                <tr class="SousForum">
+                    <td><a href="subforum.html?id=3">Neo Geo</a></td>
+                    <td>95</td>
+                    <td>846</td>
+                    <td>Slug Metal - 20 Juillet 2000</td>
+                </tr>
+
+                <tr class="Categorie">
+                    <td colspan="4"><strong>Jeux</strong></td>
+                </tr>
+                <tr class="SousForum">
+                    <td><a href="subforum.html?id=4">RPG</a></td>
+                    <td>1</td>
+                    <td>20</td>
+                    <td>Dungeon Master - 01 Mai 2020</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+        <footer>
+            <p>2025, all rights reserved</p>
+        </footer>
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>
+</body>
+</html>
